@@ -16,12 +16,6 @@
         "build": {
           "builder": "@ngx-env/builder:application",
           "options": {
-            "security": {
-              "allowedHosts": [
-                "ng-neontheme-v2.vercel.app",
-                "raihan.my.id"
-              ]
-            },
             "optimization": true,
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
