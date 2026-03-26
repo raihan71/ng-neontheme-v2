@@ -1,0 +1,117 @@
+<main>
+  <div class="ht-main">
+    <div class="ht-tm-wrapper">
+      <div class="container ht-tm-container">
+        <div class="row">
+          <div class="col-xl-12">
+            <h2 class="display-4 ht-tm-component-title">
+              Crafted Projec<span class="vim-caret">t</span>
+            </h2>
+          </div>
+          @for (item of category; track $index) {
+            <list-category [slug]="item?.slug" [title]="item?.title" [color]="item?.color" />
+          }
+        </div>
+        <div class="row">
+          <div class="col-xl-12">
+            <div id="ht-tm-maincolumn" class="ht-tm-maincolumn">
+              <div class="ht-tm-componentsblock">
+                <div class="ht-tm-cat ht-tm-btn-replaceable">
+                  <div class="row">
+                    @if (!show) {
+                      @for (item of skeletons; track $index) {
+                        <div class="col-md-6">
+                          <app-skeleton page="Project" />
+                        </div>
+                      }
+                    } @else {
+                      @for (project of projects; track $index) {
+                        <div class="col-lg-4 d-flex align-items-stretch h-100" tabindex="0">
+                          <div class="row">
+                            <div class="ht-tm-codeblock">
+                              <div
+                                class="ht-tm-element card flex-fill card-project bg-transparent border text-white"
+                              >
+                                <div class="col-12 p-5 d-block bg-dark rounded-top">
+                                  <div
+                                    class="col-md-6 col-sm-12 col-xs-12 mx-auto d-block"
+                                    style="height: 100px; overflow: hidden"
+                                  >
+                                    <div
+                                      class="d-flex justify-content-center align-items-center"
+                                      style="height: 100%"
+                                    >
+                                      <img
+                                        class="rounded shadow-4-strong img-fluid"
+                                        [ngSrc]="project?.logoAsset"
+                                        [alt]="'image screenshot project ' + project?.fields?.title"
+                                        width="187"
+                                        height="187"
+                                        priority
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card-body d-flex flex-column">
+                                  <h4 class="card-title flex-grow-1">
+                                    {{ project?.fields?.title }}
+                                  </h4>
+                                  <p class="card-text flex-grow-1">
+                                    {{ project?.fields?.shortDesc | ellipsis: 72 }}
+                                  </p>
+                                  <a
+                                    [href]="project?.fields?.url"
+                                    target="_blank"
+                                    class="btn btn-primary mt-auto"
+                                    >See demo</a
+                                  >
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      } @empty {
+                        @for (item of skeletons; track $index) {
+                          <div class="col-md-6">
+                            <app-skeleton page="Project" />
+                          </div>
+                        }
+                      }
+                    }
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        @if (projects.length > 0) {
+          <nav class="text-white" aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <li class="{{ currentPage === 1 ? 'page-item disabled ' : 'page-item' }}">
+                <button
+                  (click)="previousPage()"
+                  [disabled]="currentPage === 1"
+                  class="page-link"
+                  tabindex="-1"
+                >
+                  Previous
+                </button>
+              </li>
+              <li
+                class="{{ currentPage === projects.length ? 'page-item disabled' : 'page-item ' }}"
+              >
+                <button
+                  (click)="nextPage()"
+                  [disabled]="currentPage === projects.length"
+                  class="page-link"
+                >
+                  Next
+                </button>
+              </li>
+            </ul>
+          </nav>
+        }
+      </div>
+    </div>
+  </div>
+</main>
