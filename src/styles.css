@@ -11,6 +11,110 @@ body {
   scroll-behavior: smooth;
 }
 
+.blog-post .richtext-content {
+  line-height: 1.8;
+  word-break: break-word;
+  font-size: 1rem;
+  color: #212529;
+  white-space: normal;
+}
+
+.blog-post .richtext-content > * {
+  margin: 0 0 1rem;
+}
+
+.blog-post .richtext-content p {
+  margin: 0 0 1rem;
+  white-space: pre-line;
+}
+
+.blog-post .richtext-content .richtext-paragraph {
+  margin: 0 0 1rem;
+}
+
+.blog-post .richtext-content .richtext-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.blog-post .richtext-content h1,
+.blog-post .richtext-content h2,
+.blog-post .richtext-content h3,
+.blog-post .richtext-content h4,
+.blog-post .richtext-content h5,
+.blog-post .richtext-content h6 {
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 1.25rem 0 0.75rem;
+}
+
+.blog-post .richtext-content ul,
+.blog-post .richtext-content ol {
+  padding-left: 1.5rem;
+  margin: 0 0 1rem;
+}
+
+.blog-post .richtext-content li + li {
+  margin-top: 0.35rem;
+}
+
+.blog-post .richtext-content a {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.blog-post .richtext-content strong {
+  font-weight: 700;
+}
+
+.blog-post .richtext-content em {
+  font-style: italic;
+}
+
+.blog-post .richtext-content blockquote {
+  margin: 1.5rem 0;
+  padding: 0.75rem 1rem;
+  border-left: 4px solid #cbd5e1;
+  background: #f8fafc;
+  color: #334155;
+}
+
+.blog-post .richtext-content code {
+  padding: 0.15rem 0.35rem;
+  border-radius: 0.25rem;
+  background: #f1f5f9;
+  color: #0f172a;
+  font-size: 0.95em;
+}
+
+.blog-post .richtext-content pre {
+  margin: 1rem 0;
+  padding: 1rem;
+  overflow: auto;
+  border-radius: 0.5rem;
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+.blog-post .richtext-content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1rem auto;
+  border-radius: 0.5rem;
+}
+
+.blog-post .richtext-content iframe {
+  display: block;
+  width: 100%;
+  min-height: 360px;
+  border: 0;
+  margin: 1rem 0;
+}
+
+.blog-post .richtext-content .richtext-asset {
+  margin: 1rem 0;
+}
+
 .btn-ht-blue {
   color: #fff;
   background-color: #262f49;

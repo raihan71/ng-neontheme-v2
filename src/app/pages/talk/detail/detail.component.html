@@ -20,11 +20,7 @@
                     </p>
                   }
                 </div>
-                <div
-                  class="row col-12 text-wrap text-break"
-                  style="flex-wrap: wrap !important"
-                  [innerHTML]="talk?.longDesc | toHtml"
-                ></div>
+                <div class="richtext-content" [innerHTML]="talk?.longDesc | toHtml"></div>
               </div>
               <!-- /.blog-post -->
             }
