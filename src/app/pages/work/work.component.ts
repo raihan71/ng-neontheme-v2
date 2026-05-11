@@ -71,8 +71,22 @@ export class WorkComponent implements OnInit, OnDestroy {
         // Wait for all promises to resolve
         Promise.all(updatedWorksPromises).then((updatedWorks) => {
           this.works = updatedWorks.sort((a, b) => {
-            const endYearA = a.fields.endYear || 0;
-            const endYearB = b.fields.endYear || 0;
+            const isOngoingA = !a.fields?.isResigned;
+            const isOngoingB = !b.fields?.isResigned;
+
+            if (isOngoingA !== isOngoingB) {
+              return isOngoingA ? -1 : 1;
+            }
+
+            const startYearA = Number(a.fields?.startYear) || 0;
+            const startYearB = Number(b.fields?.startYear) || 0;
+
+            if (startYearA !== startYearB) {
+              return startYearB - startYearA;
+            }
+
+            const endYearA = Number(a.fields?.endYear) || 0;
+            const endYearB = Number(b.fields?.endYear) || 0;
             return endYearB - endYearA;
           });
           if (this.showTimeout) {
