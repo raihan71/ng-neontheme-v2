@@ -25,7 +25,8 @@
                 "input": "public"
               },
               "src/assets",
-              "src/robots.txt"
+              "src/robots.txt",
+              "src/06d82ce0d99a4ec7aa44494a578cc3d0.txt"
             ],
             "styles": ["src/styles.css",  "src/assets/css/bootstrap4-neon-glow.min.css"],
             "server": "src/main.server.ts",
