@@ -38,5 +38,9 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./pages/affiliate/affiliate.component').then((m) => m.AffiliateComponent),
   },
+  {
+    path: 'get-cv',
+    loadComponent: () => import('./pages/cv/cv.component').then((m) => m.CvComponent),
+  },
   { path: '**', component: NotfoundComponent },
 ];
